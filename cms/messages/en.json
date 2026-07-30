@@ -1,0 +1,15 @@
+{
+  "LoginPage": {
+    "title": "Login to your account",
+    "subTitle": "Enter your email below to login to your account"
+  },
+  "Form": {
+    "email": "Email",
+    "emailPh": "xxx@emeal.nttdata.com",
+    "password": "Password",
+    "passwordPh": "Enter your password",
+    "passwordDesc": "Must be between 8 and 24 characters long with 1 uppercase and 1 number",
+    "loginBtn": "Login",
+    "unauthorized": "The email or password provided is incorrect."
+  }
+}

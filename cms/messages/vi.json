@@ -1,0 +1,15 @@
+{
+  "LoginPage": {
+    "title": "Đăng Nhập Tài Khoản",
+    "subTitle": "Nhập email của bạn dưới đây để đăng nhập tài khoản"
+  },
+  "Form": {
+    "email": "Email",
+    "emailPh": "xxx@emeal.nttdata.com",
+    "password": "Mật khẩu",
+    "passwordPh": "Nhập mật khẩu",
+    "passwordDesc": "Nhập từ 8 đến 24 ký tự, bao gồm 1 ký tự viết hoa và 1 số",
+    "loginBtn": "Đăng Nhập",
+    "unauthorized": "Email hoặc mật khẩu không chính xác."
+  }
+}
