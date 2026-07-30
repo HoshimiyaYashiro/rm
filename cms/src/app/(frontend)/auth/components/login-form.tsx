@@ -77,13 +77,13 @@ export function LoginForm({
         name="password"
         type="password"
         isDisabled={isPending}
-        validate={(value) => {
-          const result = passwordSchema.safeParse(value);
-          if (!result.success) {
-            return tForm('passwordDesc')
-          }
-          return null;
-        }}
+        // validate={(value) => {
+        //   const result = passwordSchema.safeParse(value);
+        //   if (!result.success) {
+        //     return tForm('passwordDesc')
+        //   }
+        //   return null;
+        // }}
       >
         <Label>{tForm('password')}</Label>
         <Input placeholder={tForm('passwordPh')} />

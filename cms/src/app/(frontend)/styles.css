@@ -1,4 +1,10 @@
-/* @import "@heroui/styles"; */
+@import "@heroui/styles";
+/* @import "@heroui/styles/base" layer(base);
+@import "@heroui/styles/utilities" layer(utilities);
+@import "@heroui/styles/variants" layer(utilities);
+@import "@heroui/styles/themes/default" layer(theme);
+@import "@heroui/styles/components/button.css" layer(components);
+@import "@heroui/styles/components/form.css" layer(components); */
 
 :root {
   --font-sans: var(--font-inter);

@@ -13,7 +13,7 @@ export default async function AuthLayout(props: { children: React.ReactNode }) {
 
   // Nếu chưa đăng nhập HOẶC token đã hết hạn, user sẽ trả về giá trị null
   if (user) {
-    redirect('/') 
+    redirect('/performance') 
   }
   return (
     <>{children}</>

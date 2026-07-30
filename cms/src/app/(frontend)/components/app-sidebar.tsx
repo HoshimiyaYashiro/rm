@@ -111,11 +111,11 @@ const data = {
   //   },
   //],
 }
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & { authUser: User }) {
-  const { authUser } = props;
-  const user = {
-    name: authUser?.name || '',
-    email: authUser?.email || '',
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & { user: User }) {
+  const { user } = props;
+  const authUser = {
+    name: user?.name || '',
+    email: user?.email || '',
     avatar: '',
   }
   return (
@@ -135,7 +135,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
         <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={user} />
+        <NavUser user={authUser} />
       </SidebarFooter>
     </Sidebar>
   )
