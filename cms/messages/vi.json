@@ -14,7 +14,8 @@
   },
   "nav": {
     "performance": "Hiệu năng",
-    "approvals": "Phê duyệt",
+    "approval": "Phê duyệt",
+    "management": "Quản lý",
     "admin": "Quản trị",
     "logout": "Đăng xuất"
   },
@@ -57,7 +58,9 @@
     "formulaNote": "Dựa trên công thức của đội:",
     "days": "ngày",
     "chartTitle": "Biểu đồ điểm",
-    "chartDesc": "Xem và quản lý các bản ghi hiệu năng hàng tháng của bạn.",
+    "chartDesc": "Xem và quản lý các bản ghi hiệu năng hàng tháng của bạn.",    
+    "sheetDesc": "Cập nhật và theo dõi hiệu năng của bạn.",    
+    "list": "Danh sách hiệu năng",    
     "steps": {
       "draftReg": "Đăng ký",
       "managerApproval": "Quản lý duyệt",

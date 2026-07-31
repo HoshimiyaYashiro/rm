@@ -1,10 +1,15 @@
 @import "@heroui/styles";
+@import "tw-animate-css";
+
 /* @import "@heroui/styles/base" layer(base);
 @import "@heroui/styles/utilities" layer(utilities);
 @import "@heroui/styles/variants" layer(utilities);
 @import "@heroui/styles/themes/default" layer(theme);
 @import "@heroui/styles/components/button.css" layer(components);
-@import "@heroui/styles/components/form.css" layer(components); */
+@import "@heroui/styles/components/input.css" layer(components);
+@import "@heroui/styles/components/fieldset.css" layer(components);
+@import "@heroui/styles/components/field-error.css" layer(components);
+@import "@heroui/styles/components/error-message.css" layer(components); */
 
 :root {
   --font-sans: var(--font-inter);

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2, CheckCircle2, Clock, CheckCircle, ChevronRight, Check } from 'lucide-react';
+import { Plus, Trash2, CheckCircle2, Clock, CheckCircle, ChevronRight, Check, ChartColumnIcon, ChartLineIcon } from 'lucide-react';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '../../components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table';
@@ -249,8 +249,8 @@ export default function PerformancePage() {
                 </label>
               </div>
               <div className="flex bg-muted p-1 rounded-md">
-                <Button variant={chartType === 'bar' ? 'default' : 'ghost'} size="sm" onClick={() => setChartType('bar')} className="h-7 text-xs">Cột</Button>
-                <Button variant={chartType === 'line' ? 'default' : 'ghost'} size="sm" onClick={() => setChartType('line')} className="h-7 text-xs">Đường</Button>
+                <Button variant={chartType === 'bar' ? 'default' : 'ghost'} size="sm" onClick={() => setChartType('bar')} className="h-7 text-xs"><ChartColumnIcon/></Button>
+                <Button variant={chartType === 'line' ? 'default' : 'ghost'} size="sm" onClick={() => setChartType('line')} className="h-7 text-xs"><ChartLineIcon/></Button>
               </div>
             </div>
           </CardHeader>

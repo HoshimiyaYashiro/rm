@@ -20,96 +20,23 @@ import { useQuery } from "@tanstack/react-query"
 import { userQueries } from "../services/user-api"
 import { User } from "@/payload-types"
 
-const data = {
-  navMain: [
-    {
-      title: "My Performance",
-      url: "#",
-      icon: (
-        <FileTextIcon
-        />
-      ),
-      isActive: true,
-    },
-    {
-      title: "Performance Management",
-      url: "#",
-      icon: (
-        <SheetIcon
-        />
-      ),
-    },
-    // {
-    //   title: "Documentation",
-    //   url: "#",
-    //   icon: (
-    //     <BookOpenIcon
-    //     />
-    //   ),
-    //   items: [
-    //     {
-    //       title: "Introduction",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Get Started",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Tutorials",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Changelog",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
-  ],
-  // navSecondary: [
-  //   {
-  //     title: "Support",
-  //     url: "#",
-  //     icon: (
-  //       <LifeBuoyIcon
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     title: "Feedback",
-  //     url: "#",
-  //     icon: (
-  //       <SendIcon
-  //       />
-  //     ),
-  //   },
-  // ],
-  // projects: [
-  //   {
-  //     name: "Design Engineering",
-  //     url: "#",
-  //     icon: (
-  //       <FrameIcon
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     name: "Sales & Marketing",
-  //     url: "#",
-  //     icon: (
-  //       <PieChartIcon
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     name: "Travel",
-  //     url: "#",
-  //     icon: (
-  //       <MapIcon
-  //       />
-  //     ),
-  //   },
-  //],
+const navPerformance = {
+  title: "nav.performance",
+  url: "/performance",
+  icon: (
+    <FileTextIcon
+    />
+  ),
+  isActive: false,
+}
+const navApproval = {
+  title: "nav.approval",
+  url: "/approval",
+  icon: (
+    <SheetIcon
+    />
+  ),
+  isActive: false,
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & { user: User }) {
   const { user } = props;
@@ -118,6 +45,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
     email: user?.email || '',
     avatar: '',
   }
+  const navMain = [navPerformance, navApproval]
+  navMain[0].isActive = true
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -130,7 +59,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain items={navMain} />
         {/* <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>

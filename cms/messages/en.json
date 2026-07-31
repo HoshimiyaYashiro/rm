@@ -14,7 +14,8 @@
   },
   "nav": {
     "performance": "Performance",
-    "approvals": "Approvals",
+    "approval": "Approvals",
+    "management": "Management",
     "admin": "Admin",
     "logout": "Logout"
   },
@@ -56,10 +57,10 @@
     "finalPerformanceScore": "Final Performance Score",
     "formulaNote": "Based on team formula:",
     "days": "days",
-    "chartTitle": "Biểu đồ điểm",
-    "chartDesc": "Xem và quản lý các bản ghi hiệu năng hàng tháng của bạn.",    
-    "sheetDesc": "Cập nhật và theo dõi hiệu năng của bạn.",    
-    "list": "Danh sách hiệu năng",    
+    "chartTitle": "Score Chart",
+    "chartDesc": "Manage your monthly performance records",    
+    "sheetDesc": "Update and track your performance",    
+    "list": "Record List",    
     "steps": {
       "draftReg": "Registration",
       "managerApproval": "Manager Approval",

@@ -17,6 +17,7 @@ import {
   SidebarMenuSubItem,
 } from "@/app/(frontend)/components/ui/sidebar"
 import { ChevronRightIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function NavMain({
   items,
@@ -32,6 +33,7 @@ export function NavMain({
     }[]
   }[]
 }) {
+  const t = useTranslations();
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -48,7 +50,7 @@ export function NavMain({
               render={<a href={item.url} />}
             >
               {item.icon}
-              <span>{item.title}</span>
+              <span>{t(item.title)}</span>
             </SidebarMenuButton>
             {item.items?.length ? (
               <>

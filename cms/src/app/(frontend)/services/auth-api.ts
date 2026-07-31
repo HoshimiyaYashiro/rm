@@ -1,10 +1,21 @@
-import { payloadSDK } from "@/lib/payload";
+import { apiUrl, payloadSDK } from "@/lib/payload";
 
-// Auth login operation
 export async function loginHandler(data: { email: string, password: string }) {
-  const result = await payloadSDK.login({
+  const req = await payloadSDK.login({
     collection: 'users',        
     data,
   })
-  return result;
+  return req;
+} 
+
+export async function logoutHandler() {
+  const req = await fetch(`${apiUrl}/users/logout`, {
+    method: "POST", 
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+  const data = await req.json()
+  return data;
 } 

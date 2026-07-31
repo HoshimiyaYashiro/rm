@@ -1,7 +1,7 @@
 import React from 'react'
 import { Geist } from 'next/font/google'
 import { Inter } from 'next/font/google'
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import './styles.css'
 import { CustomClientProvider } from './providers/custom-client-provider'
 import { NextIntlClientProvider } from 'next-intl'
