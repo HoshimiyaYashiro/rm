@@ -6,9 +6,11 @@ import { en } from 'zod/locales'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { TooltipProvider } from '../components/ui/tooltip'
+import { Settings } from 'luxon'
 
 export function CustomClientProvider({ children, locale }: { children: React.ReactNode, locale: string }) {
   z.config(en())
+  Settings.defaultLocale = locale;
   // Tạo QueryClient duy nhất cho mỗi instance của trình duyệt
   const [queryClient] = useState(() => new QueryClient({
     defaultOptions: {
@@ -37,7 +39,7 @@ export function CustomClientProvider({ children, locale }: { children: React.Rea
         z.config(en())
       }
     }
-
+    Settings.defaultLocale = locale; // Cập nhật ngôn ngữ mặc định cho Luxon
     loadZodLocale()
   }, [locale]) // Chạy lại logic ngay khi người dùng chọn ngôn ngữ mới
 

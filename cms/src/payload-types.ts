@@ -72,6 +72,7 @@ export interface Config {
     'performance-records': PerformanceRecord;
     groups: Group;
     memberships: Membership;
+    approval: Approval;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +81,10 @@ export interface Config {
   collectionsJoins: {
     users: {
       joinedGroups: 'memberships';
+      approved: 'approval';
+    };
+    'performance-records': {
+      approvalBy: 'approval';
     };
     groups: {
       members: 'memberships';
@@ -91,6 +96,7 @@ export interface Config {
     'performance-records': PerformanceRecordsSelect<false> | PerformanceRecordsSelect<true>;
     groups: GroupsSelect<false> | GroupsSelect<true>;
     memberships: MembershipsSelect<false> | MembershipsSelect<true>;
+    approval: ApprovalSelect<false> | ApprovalSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -156,6 +162,11 @@ export interface User {
     hasNextPage?: boolean;
     totalDocs?: number;
   };
+  approved?: {
+    docs?: (number | Approval)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
   updatedAt: string;
   createdAt: string;
   email?: string | null;
@@ -207,6 +218,54 @@ export interface Group {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "approval".
+ */
+export interface Approval {
+  id: number;
+  approverOrder: number;
+  status: 'PR' | 'AR' | 'PS' | 'AS';
+  record?: (number | null) | PerformanceRecord;
+  approver?: (number | null) | User;
+  approverAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "performance-records".
+ */
+export interface PerformanceRecord {
+  id: number;
+  label: string;
+  start: string;
+  end?: string | null;
+  type: 'M' | 'Q' | 'Y';
+  status: 'DR' | 'PR' | 'AR' | 'DS' | 'PS' | 'AS';
+  registeredDays: number;
+  workingDays?: number | null;
+  goals:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  managementPoint?: number | null;
+  customerPoint?: number | null;
+  performance?: number | null;
+  user?: (number | null) | User;
+  approvalBy?: {
+    docs?: (number | Approval)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
@@ -223,31 +282,6 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "performance-records".
- */
-export interface PerformanceRecord {
-  id: number;
-  label: string;
-  type: 'M' | 'Q' | 'Y';
-  status: 'SD' | 'SA' | 'ED' | 'EA';
-  registeredDays?: number | null;
-  workingDays?: number | null;
-  goals:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  performance?: number | null;
-  user?: (number | null) | User;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -292,6 +326,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'memberships';
         value: number | Membership;
+      } | null)
+    | ({
+        relationTo: 'approval';
+        value: number | Approval;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -344,6 +382,7 @@ export interface UsersSelect<T extends boolean = true> {
   role?: T;
   dob?: T;
   joinedGroups?: T;
+  approved?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -386,13 +425,18 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface PerformanceRecordsSelect<T extends boolean = true> {
   label?: T;
+  start?: T;
+  end?: T;
   type?: T;
   status?: T;
   registeredDays?: T;
   workingDays?: T;
   goals?: T;
+  managementPoint?: T;
+  customerPoint?: T;
   performance?: T;
   user?: T;
+  approvalBy?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -416,6 +460,19 @@ export interface MembershipsSelect<T extends boolean = true> {
   group?: T;
   user?: T;
   role?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "approval_select".
+ */
+export interface ApprovalSelect<T extends boolean = true> {
+  approverOrder?: T;
+  status?: T;
+  record?: T;
+  approver?: T;
+  approverAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }

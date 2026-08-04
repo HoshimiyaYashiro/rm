@@ -10,6 +10,7 @@ import { PerformanceRecords } from './collections/PerformanceRecords/'
 import { Groups } from './collections/Groups/'
 import { Memberships } from './collections/Memberships/'
 import { Media } from './collections/Media'
+import { Approval } from './collections/Approval'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, PerformanceRecords, Groups, Memberships],
+  collections: [Users, Media, PerformanceRecords, Groups, Memberships, Approval],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

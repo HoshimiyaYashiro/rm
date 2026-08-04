@@ -1,0 +1,129 @@
+{
+  "LoginPage": {
+    "title": "Login to your account",
+    "subTitle": "Enter your email below to login to your account"
+  },
+  "Form": {
+    "email": "Email",
+    "emailPh": "xxx@emeal.nttdata.com",
+    "password": "Password",
+    "passwordPh": "Enter your password",
+    "passwordDesc": "Must be between 8 and 24 characters long with 1 uppercase and 1 number",
+    "loginBtn": "Login",
+    "unauthorized": "The email or password provided is incorrect."
+  },
+  "nav": {
+    "performance": "Performance",
+    "approval": "Approvals",
+    "management": "Management",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Login to PerfEval",
+    "selectUser": "Select Mock User",
+    "selectPlaceholder": "Select a user",
+    "submit": "Login"
+  },
+  "performance": {
+    "title": "Performance",
+    "historyTitle": "Performance History",
+    "historySubtitle": "View and manage your monthly performance records.",
+    "newRecord": "New Record",
+    "noRecords": "No performance records found. Create one for the current month!",
+    "goalsCount": "goals",
+    "finalScore": "Final Score",
+    "recordForMonth": "Record for",
+    "newRecordForMonth": "New Record for",
+    "startOfMonthSection": "Start of Month: Goals Registration",
+    "registeredDays": "Registered Working Days",
+    "goalsLabel": "Goals / Objectives",
+    "addGoal": "Add Goal",
+    "goalDescription": "Goal Description",
+    "goalPlaceholder": "What do you plan to achieve?",
+    "markCompleted": "Mark as completed",
+    "resultPlaceholder": "Add notes about your achievements for this goal...",
+    "saveDraft": "Save Draft",
+    "submitRegistration": "Submit Registration",
+    "waitingManagerApproval": "Waiting for Manager's Approval",
+    "cancelRequest": "Cancel Request",
+    "endOfMonthSection": "End of Month: Declaration",
+    "actualDays": "Actual Working Days",
+    "submitSummary": "Submit Summary",
+    "evaluationResults": "Evaluation Results",
+    "attendance": "Attendance",
+    "managerScore": "Manager Score",
+    "customerTasks": "Customer Tasks",
+    "finalPerformanceScore": "Final Performance Score",
+    "formulaNote": "Based on team formula:",
+    "days": "days",
+    "chartTitle": "Score Chart",
+    "chartDesc": "Manage your monthly performance records",    
+    "sheetDesc": "Update and track your performance",    
+    "list": "Record List",    
+    "steps": {
+      "draftReg": "Registration",
+      "managerApproval": "Manager Approval",
+      "summary": "Month Summary",
+      "finalEval": "Evaluation"
+    },
+    "status": {
+      "draft_registration": "Draft Registration",
+      "pending_registration": "Pending Registration",
+      "approved_registration": "Registration Approved",
+      "draft_summary": "Draft Summary",
+      "pending_summary": "Pending Summary",
+      "approved_summary": "Completed"
+    }
+  },
+  "approvals": {
+    "title": "Team Approvals",
+    "subtitle": "Review and evaluate your team's performance declarations.",
+    "notManager": "You are not assigned as a manager to any team.",
+    "noPending": "No pending approvals at the moment.",
+    "employeeDeclaration": "Employee Declaration",
+    "registered": "Registered",
+    "actual": "Actual",
+    "registeredGoals": "Registered Goals",
+    "completed": "Completed",
+    "notCompleted": "Not Completed",
+    "noNotes": "No notes provided.",
+    "managerAction": "Manager Action",
+    "approveGoals": "Approve Goals",
+    "reject": "Reject",
+    "approveSummary": "Approve Summary",
+    "managerScoreLabel": "Manager Score (0-100)",
+    "managerScorePlaceholder": "Evaluate overall performance",
+    "customerScoreLabel": "Customer Tasks Score (0-100)",
+    "customerScorePlaceholder": "Evaluate client-facing tasks",
+    "table": {
+      "employee": "Employee",
+      "month": "Month",
+      "requestType": "Request Type",
+      "goals": "Goals",
+      "workingDays": "Working Days",
+      "actions": "Actions"
+    },
+    "review": "Review & Approve"
+  },
+  "admin": {
+    "title": "System Configuration",
+    "subtitle": "Manage performance evaluation formulas across teams.",
+    "department": "Department",
+    "team": "Team",
+    "levels": "Level(s)",
+    "formulaWeights": "Evaluation Formula Weights",
+    "weightsHint": "Weights should sum up to 1.0 (100%)",
+    "attendanceWeight": "Attendance",
+    "managerWeight": "Manager",
+    "customerWeight": "Customer",
+    "weightWarning": "Warning: Total weight is not 1.0",
+    "noTeams": "No teams in this department."
+  },
+  "common": {
+    "language": "Language",
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "loading": "Loading..."
+  }  
+}

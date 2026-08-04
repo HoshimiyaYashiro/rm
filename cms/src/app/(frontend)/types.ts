@@ -36,10 +36,10 @@ export type RecordStatus =
   | 'approved_summary';
 
 export interface Goal {
-  id: string;
-  description: string;
+  id?: string;
+  goal: string;
   isCompleted: boolean;
-  resultDescription: string;
+  result: string;
 }
 
 export interface PerformanceRecord {

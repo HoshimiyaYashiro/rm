@@ -63,8 +63,8 @@
     "list": "Danh sách hiệu năng",    
     "steps": {
       "draftReg": "Đăng ký",
-      "managerApproval": "Quản lý duyệt",
-      "monthSummary": "Báo cáo cuối tháng",
+      "managerApproval": "Phê duyệt",
+      "summary": "Báo cáo",
       "finalEval": "Đánh giá"
     },
     "status": {

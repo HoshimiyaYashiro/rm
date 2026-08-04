@@ -53,8 +53,8 @@ export function UserDropdown2({
             <Avatar.Fallback delayMs={600}>JD</Avatar.Fallback>
           </Avatar>
           <div className="flex flex-col gap-0">
-            <p className="truncate text-sm leading-none font-medium">{user.name}</p>
-            <p className="truncate text-xs leading-none text-muted">{user.email}</p>
+            <p className="truncate text-sm leading-none font-medium text-left">{user.name}</p>
+            <p className="truncate text-xs leading-none text-muted-foreground pt-1">{user.email}</p>
           </div>
         </div>
       </Dropdown.Trigger>
@@ -70,7 +70,7 @@ export function UserDropdown2({
             </Avatar>
             <div className="flex flex-col gap-0">
               <p className="truncate text-sm leading-5 font-medium">{user.name}</p>
-              <p className="truncate text-xs leading-none text-muted">{user.email}</p>
+              <p className="truncate text-xs leading-none text-muted-foreground">{user.email}</p>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ export function UserDropdown2({
           <Dropdown.Item id="new-project" textValue="New project">
             <div className="flex w-full items-center justify-between gap-2">
               <Label>Account</Label>
-              <CircleUserIcon className="size-3.5 text-muted" />
+              <CircleUserIcon className="size-3.5 text-muted-foreground" />
             </div>
           </Dropdown.Item>
           <Dropdown.Item id="logout" textValue="Logout" variant="danger" onClick={handleLogout} isDisabled={isPending}>

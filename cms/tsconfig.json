@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -8,7 +7,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -26,11 +25,17 @@
       "@/*": [
         "./src/*"
       ],
+      "@fe-components/*": [
+        "./src/app/(frontend)/components/*"
+      ],
       "@payload-config": [
         "./src/payload.config.ts"
       ]
     },
-    "target": "ES2022"
+    "target": "ES2022",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "moduleDetection": "force",
   },
   "include": [
     "next-env.d.ts",

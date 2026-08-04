@@ -35,6 +35,7 @@ export const Users: CollectionConfig = {
       }, required: false
     },
     { name: 'joinedGroups', type: 'join', collection: 'memberships', on: 'user' },
+    { name: 'approved', type: 'join', collection: 'approval', on: 'approver' },
     // Email added by default
     // Add more fields as needed
   ],

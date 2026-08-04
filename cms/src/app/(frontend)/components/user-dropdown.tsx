@@ -56,6 +56,14 @@ export function UserDropdown({
       }
     })
   }
+  const getInitials = (name: string) => {
+    const words = name.trim().split(/\s+/);
+    if (words.length === 1) {
+      return words[0].substring(0, 2).toUpperCase();
+    }
+    return (words[0][0] + words[words.length - 1][0]).toUpperCase();
+  };
+  const initials = getInitials(user.name);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
@@ -65,7 +73,7 @@ export function UserDropdown({
       >
         <Avatar>
           <AvatarImage src={user.avatar} alt={user.name} />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback>{ initials }</AvatarFallback>
         </Avatar>
         <div className="grid flex-1 text-left text-sm leading-tight">
           <span className="truncate font-medium">{user.name}</span>
@@ -84,7 +92,7 @@ export function UserDropdown({
             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
               <Avatar>
                 <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>{ initials }</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
